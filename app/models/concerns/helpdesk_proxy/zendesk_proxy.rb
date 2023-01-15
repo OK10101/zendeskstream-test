@@ -8,6 +8,10 @@ class HelpdeskProxy::ZendeskProxy < HelpdeskProxy::Base
     client.tickets(sort_by: sort_by, sort_order: sort_order)
   end
 
+  def ticket(id)
+    ZendeskAPI::Ticket.find!(client, id: id)
+  end
+
   private
 
   def default_credentials

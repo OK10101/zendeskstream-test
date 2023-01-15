@@ -33,6 +33,8 @@ gem "bootsnap", require: false
 gem 'zendesk_api', '1.34.0'
 gem 'google_drive'
 gem 'google-api-client'
+gem 'whenever', require: false
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

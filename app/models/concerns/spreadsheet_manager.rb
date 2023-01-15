@@ -1,9 +1,10 @@
 class SpreadsheetManager
 
-  attr_reader :spreadsheet_key
+  attr_reader :spreadsheet_key, :spreadsheet_provider
 
-  def initialize(spreadsheet_key)
-    @spreadsheet_key = spreadsheet_key
+  def initialize(spreadsheet_key, spreadsheet_provider: :google)
+    @spreadsheet_key      = spreadsheet_key
+    @spreadsheet_provider = spreadsheet_provider
   end
 
   ## Row is a multidimensional array, e.g.
@@ -30,6 +31,6 @@ class SpreadsheetManager
   end
 
   def proxy
-    @proxy ||= SpreadsheetProxy::GoogleSpreadsheetProxy.new
+    @proxy ||= "SpreadsheetProxy::#{spreadsheet_provider.to_s.camelcase}SpreadsheetProxy".constantize.new
   end
 end

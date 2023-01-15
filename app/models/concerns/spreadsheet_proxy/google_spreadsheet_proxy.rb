@@ -10,6 +10,10 @@ class SpreadsheetProxy::GoogleSpreadsheetProxy < SpreadsheetProxy::Base
 
   private
 
+  def default_credentials
+    absolute_credentials_path
+  end
+
   def absolute_credentials_path
     @absolute_credentials_path ||= Rails.root.join(CONFIG_FILE_PATH).to_s
   end

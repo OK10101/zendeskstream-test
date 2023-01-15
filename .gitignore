@@ -32,5 +32,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+/.byebug_history
+
 /config/spreadsheet/service_account_credentials.json
 /config/zendesk/credentials.json

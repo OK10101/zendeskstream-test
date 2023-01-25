@@ -36,3 +36,5 @@
 
 /config/spreadsheet/service_account_credentials.json
 /config/zendesk/credentials.json
+
+/.env

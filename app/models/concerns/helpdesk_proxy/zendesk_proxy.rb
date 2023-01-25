@@ -4,8 +4,10 @@ class HelpdeskProxy::ZendeskProxy < HelpdeskProxy::Base
 
   CONFIG_FILE_PATH = 'config/zendesk/credentials.json'
 
-  def tickets(sort_by: :created_at, sort_order: :desc)
-    client.tickets(sort_by: sort_by, sort_order: sort_order)
+  def tickets(sort_by: :created_at, sort_order: :desc, fetch: true)
+    tickets = client.tickets(sort_by: sort_by, sort_order: sort_order)
+
+    fetch ? tickets.fetch : tickets
   end
 
   def ticket(id)

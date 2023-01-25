@@ -8,6 +8,10 @@ class SpreadsheetProxy::GoogleSpreadsheetProxy < SpreadsheetProxy::Base
     session.spreadsheet_by_key(key)
   end
 
+  def create_worksheet(spreadsheet:, title:)
+    spreadsheet.add_worksheet(title)
+  end
+
   private
 
   def default_credentials
